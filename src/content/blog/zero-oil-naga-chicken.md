@@ -1,7 +1,7 @@
 ---
 title: "Zero Oil Naga Chicken"
 description: "Tanuka Chatterjee's zero-oil pressure-cooker chicken with potatoes, tomatoes and chillies, finished fresh with coriander and green chillies."
-pubDate: 2026-11-04T23:38:11-08:00
+pubDate: 2026-11-04T23:38:11Z
 tags: ["recipe", "chicken", "indian", "easy"]
 ---
 
