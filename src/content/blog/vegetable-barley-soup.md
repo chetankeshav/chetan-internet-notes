@@ -2,6 +2,7 @@
 title: "Vegetable Barley Soup"
 description: "Beth Moncel's vegetable barley soup from Budget Bytes: colourful vegetables and pearled barley in vegetable broth, freezer-friendly and filling."
 pubDate: 2026-11-05T19:20:00Z
+thumbnail: ./images/vegetable-barley-soup.jpg
 tags: ["recipe", "soup", "easy", "vegan"]
 ---
 
