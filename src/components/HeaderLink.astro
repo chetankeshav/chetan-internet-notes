@@ -8,7 +8,7 @@ const { href, class: className, ...props } = Astro.props;
 // Compare on the first path segment after the base, e.g. "/tags/astro/" -> "tags"
 const current = Astro.url.pathname.slice(url('/').length).split('/')[0];
 const target = href.replace(/^\//, '').split('/')[0];
-const isActive = current === target || (target === '' && current === 'blog');
+const isActive = current === target;
 ---
 
 <a href={url(href)} class:list={[className, { active: isActive }]} {...props}>
