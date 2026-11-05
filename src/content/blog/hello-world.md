@@ -1,7 +1,7 @@
 ---
 title: "Hello, world"
 description: "The first post on this blog, and a quick reference for writing new ones."
-pubDate: 2026-11-04T21:35:06-08:00
+pubDate: 2026-11-04T21:35:06Z
 tags: ["meta", "writing"]
 ---
 
