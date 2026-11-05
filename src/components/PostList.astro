@@ -17,26 +17,34 @@ const { posts } = Astro.props;
 	{
 		posts.map((post) => (
 			<li>
-				<a href={url(`/blog/${post.id}/`)}>
-					{post.data.thumbnail && (
+				{post.data.thumbnail && (
+					<a
+						class="thumb-link"
+						href={url(`/blog/${post.id}/`)}
+						aria-label={post.data.title}
+					>
 						<Image
 							class="thumbnail"
-							width={720}
-							height={360}
+							width={240}
+							height={160}
 							src={post.data.thumbnail}
-							alt={post.data.title}
+							alt=""
 						/>
-					)}
-					<h3 class="title">
-						{post.data.title}
-						{post.data.draft && <span class="draft">draft</span>}
-					</h3>
-				</a>
-				<p class="date">
-					<FormattedDate date={post.data.pubDate} />
-				</p>
-				{post.data.description && <p class="description">{post.data.description}</p>}
-				<TagList tags={post.data.tags} />
+					</a>
+				)}
+				<div class="text">
+					<a href={url(`/blog/${post.id}/`)}>
+						<h3 class="title">
+							{post.data.title}
+							{post.data.draft && <span class="draft">draft</span>}
+						</h3>
+					</a>
+					<p class="date">
+						<FormattedDate date={post.data.pubDate} />
+					</p>
+					{post.data.description && <p class="description">{post.data.description}</p>}
+					<TagList tags={post.data.tags} />
+				</div>
 			</li>
 		))
 	}
@@ -48,19 +56,28 @@ const { posts } = Astro.props;
 		padding: 0;
 	}
 	.posts li {
+		display: flex;
+		gap: 1em;
+		align-items: flex-start;
 		padding: 1.25em 0;
 		border-bottom: 1px solid rgba(var(--gray-light), 100%);
 	}
 	.posts a {
 		text-decoration: none;
 	}
+	.thumb-link {
+		flex: 0 0 240px;
+	}
 	.thumbnail {
 		display: block;
 		width: 100%;
 		height: auto;
-		margin-bottom: 0.75em;
 		border-radius: 12px;
 		box-shadow: var(--box-shadow);
+	}
+	.text {
+		flex: 1;
+		min-width: 0;
 	}
 	.title {
 		margin: 0;
@@ -82,5 +99,15 @@ const { posts } = Astro.props;
 		background: #fde68a;
 		font-size: 0.5em;
 		vertical-align: middle;
+	}
+	@media (max-width: 560px) {
+		.posts li {
+			flex-direction: column;
+		}
+		.thumb-link {
+			flex: none;
+			width: 100%;
+			max-width: 320px;
+		}
 	}
 </style>
