@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import { url } from '../utils';
 import FormattedDate from './FormattedDate.astro';
@@ -17,6 +18,15 @@ const { posts } = Astro.props;
 		posts.map((post) => (
 			<li>
 				<a href={url(`/blog/${post.id}/`)}>
+					{post.data.thumbnail && (
+						<Image
+							class="thumbnail"
+							width={720}
+							height={360}
+							src={post.data.thumbnail}
+							alt={post.data.title}
+						/>
+					)}
 					<h3 class="title">
 						{post.data.title}
 						{post.data.draft && <span class="draft">draft</span>}
@@ -43,6 +53,14 @@ const { posts } = Astro.props;
 	}
 	.posts a {
 		text-decoration: none;
+	}
+	.thumbnail {
+		display: block;
+		width: 100%;
+		height: auto;
+		margin-bottom: 0.75em;
+		border-radius: 12px;
+		box-shadow: var(--box-shadow);
 	}
 	.title {
 		margin: 0;
