@@ -1,0 +1,31 @@
+---
+import Page from '../../layouts/Page.astro';
+import { getTags, url } from '../../utils';
+
+const tags = await getTags();
+---
+
+<Page title="Tags">
+	{tags.length === 0 && <p>No tags yet.</p>}
+	<ul class="tag-index">
+		{
+			tags.map(([tag, count]) => (
+				<li>
+					<a href={url(`/tags/${tag}/`)}>#{tag}</a> <span>({count})</span>
+				</li>
+			))
+		}
+	</ul>
+</Page>
+<style>
+	.tag-index {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75em 1.5em;
+		list-style: none;
+		padding: 0;
+	}
+	.tag-index span {
+		color: rgb(var(--gray));
+	}
+</style>

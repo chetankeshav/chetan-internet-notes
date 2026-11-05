@@ -1,0 +1,25 @@
+---
+import Page from '../layouts/Page.astro';
+import { url } from '../utils';
+---
+
+<Page title="Search">
+	<link slot="head" href={url('/pagefind/pagefind-ui.css')} rel="stylesheet" />
+	<div id="search"></div>
+	<noscript>Search requires JavaScript.</noscript>
+	<p id="search-dev-note" hidden>
+		The search index is generated at build time. Run <code>npm run build && npm run preview</code>
+		to try search locally.
+	</p>
+	<script is:inline define:vars={{ bundle: url('/pagefind/') }}>
+		const script = document.createElement('script');
+		script.src = bundle + 'pagefind-ui.js';
+		script.onload = () => {
+			new PagefindUI({ element: '#search', bundlePath: bundle, showImages: false, autofocus: true });
+		};
+		script.onerror = () => {
+			document.getElementById('search-dev-note').hidden = false;
+		};
+		document.head.appendChild(script);
+	</script>
+</Page>

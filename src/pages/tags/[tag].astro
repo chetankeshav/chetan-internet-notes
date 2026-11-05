@@ -1,0 +1,20 @@
+---
+import PostList from '../../components/PostList.astro';
+import Page from '../../layouts/Page.astro';
+import { getPosts, getTags } from '../../utils';
+
+export async function getStaticPaths() {
+	const posts = await getPosts();
+	return (await getTags()).map(([tag]) => ({
+		params: { tag },
+		props: { posts: posts.filter((post) => post.data.tags.includes(tag)) },
+	}));
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+---
+
+<Page title={`#${tag}`} description={`Posts tagged ${tag}`}>
+	<PostList posts={posts} />
+</Page>
