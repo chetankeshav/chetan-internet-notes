@@ -7,6 +7,10 @@ tags: ["book-recommendation", "instagram"]
 
 Source: [Watch the reel on Instagram](https://www.instagram.com/reels/DetFBacTZ8N/) by Himanshu Bhalla (@bestbhallaintown), posted 19 October 2026.
 
+![The cover of The Finest Hotel in Kabul by Lyse Doucet](./images/finest-hotel-in-kabul-cover.jpg)
+
+*Cover: Hutchinson Heinemann, 2025.*
+
 ## Summary
 
 Bhalla recommends *The Finest Hotel in Kabul* by BBC journalist Lyse Doucet as a history book told through people rather than dates. The book follows the staff of a hotel in Kabul — especially the women who worked there — as they kept showing up through decades of regime change and upheaval.
