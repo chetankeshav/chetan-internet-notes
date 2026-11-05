@@ -7,6 +7,10 @@ tags: ["recipe", "chicken", "indian", "easy"]
 
 Source: [Watch the reel on Instagram](https://www.instagram.com/p/DdQodcpzD-I/) by Tanuka Chatterjee (@tanukachatterjee), posted 14 September 2026.
 
+![The finished Zero Oil Naga Chicken in a bowl, from Tanuka Chatterjee's reel](./images/zero-oil-naga-chicken.jpg)
+
+*Still from Tanuka Chatterjee's reel.*
+
 ## Summary
 
 A zero-oil chicken curry made in a pressure cooker, with no added oil and no extra spices. Raw chicken, onion, crushed ginger and garlic, dry red chillies, whole potatoes and whole tomatoes are cooked together in water, then the softened vegetables are mashed back into the pot to thicken the broth. Fresh coriander leaves and green chillies are stirred in at the end, with no further cooking — that fresh finish is what the video presents as the trick that makes it so flavourful.
