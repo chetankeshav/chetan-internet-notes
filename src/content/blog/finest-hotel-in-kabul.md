@@ -2,7 +2,7 @@
 title: "The Finest Hotel in Kabul"
 description: "A 10/10 history recommendation from Himanshu Bhalla: Lyse Doucet's book about a Kabul hotel and the people who kept it running through decades of change."
 pubDate: 2026-11-04
-tags: ["book-recommendation"]
+tags: ["book-recommendation", "instagram"]
 ---
 
 Source: [Watch the reel on Instagram](https://www.instagram.com/reels/DetFBacTZ8N/) by Himanshu Bhalla (@bestbhallaintown), posted 19 October 2026.
