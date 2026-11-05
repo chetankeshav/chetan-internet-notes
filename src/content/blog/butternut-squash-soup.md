@@ -2,6 +2,7 @@
 title: "Butternut Squash Soup"
 description: "Joanne's roasted butternut squash soup from Fifteen Spatulas: creamy without dairy, with cinnamon, onion and broth."
 pubDate: 2026-11-05T19:10:00Z
+thumbnail: ./images/butternut-squash-soup.jpg
 tags: ["recipe", "soup", "easy"]
 ---
 
