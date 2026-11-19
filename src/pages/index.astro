@@ -1,11 +1,73 @@
 ---
-import PostList from '../components/PostList.astro';
+import { HOME_CARDS } from '../consts';
 import Page from '../layouts/Page.astro';
-import { getPosts } from '../utils';
+import { getPosts, url } from '../utils';
 
 const posts = await getPosts();
+const cards = HOME_CARDS.map((card) => ({
+	...card,
+	href: url(card.tag ? `/tags/${card.tag}/` : '/blog/'),
+	count: card.tag ? posts.filter((post) => post.data.tags.includes(card.tag!)).length : posts.length,
+}));
 ---
 
 <Page>
-	<PostList posts={posts} />
+	<ul class="cards">
+		{
+			cards.map((card) => (
+				<li>
+					<a href={card.href}>
+						<h2>{card.title}</h2>
+						<p>{card.description}</p>
+						<span class="count">
+							{card.count} {card.count === 1 ? 'post' : 'posts'}
+						</span>
+					</a>
+				</li>
+			))
+		}
+	</ul>
 </Page>
+<style>
+	.cards {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+		gap: 1.25em;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	.cards a {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		padding: 1.5em;
+		border: 1px solid rgb(var(--gray-light));
+		border-radius: 12px;
+		background: white;
+		color: rgb(var(--gray-dark));
+		text-decoration: none;
+		transition: box-shadow 0.2s ease, transform 0.2s ease;
+	}
+	.cards a:hover {
+		box-shadow: var(--box-shadow);
+		transform: translateY(-2px);
+	}
+	.cards h2 {
+		margin: 0 0 0.25em;
+		font-size: 1.4em;
+		color: rgb(var(--black));
+	}
+	.cards a:hover h2 {
+		color: var(--accent);
+	}
+	.cards p {
+		margin: 0 0 1em;
+		color: rgb(var(--gray));
+	}
+	.count {
+		margin-top: auto;
+		font-size: 0.85em;
+		color: rgb(var(--gray));
+	}
+</style>

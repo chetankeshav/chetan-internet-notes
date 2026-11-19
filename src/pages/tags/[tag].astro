@@ -1,11 +1,15 @@
 ---
 import PostList from '../../components/PostList.astro';
+import { HOME_CARDS } from '../../consts';
 import Page from '../../layouts/Page.astro';
 import { getPosts, getTags } from '../../utils';
 
 export async function getStaticPaths() {
 	const posts = await getPosts();
-	return (await getTags()).map(([tag]) => ({
+	// Home page card tags always get a page, even before any post uses them
+	const cardTags = HOME_CARDS.flatMap((card) => (card.tag ? [card.tag] : []));
+	const tags = new Set([...(await getTags()).map(([tag]) => tag), ...cardTags]);
+	return [...tags].map((tag) => ({
 		params: { tag },
 		props: { posts: posts.filter((post) => post.data.tags.includes(tag)) },
 	}));
